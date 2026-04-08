@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.perfecttrip.ui.home.HomeFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/action_home_to_step1"
+            app:destination="@id/createStep1Fragment" />
+        <action
+            android:id="@+id/action_home_to_checklist"
+            app:destination="@id/checklistFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createStep1Fragment"
+        android:name="com.example.perfecttrip.ui.create.CreateStep1Fragment"
+        android:label="Step1">
+        <action
+            android:id="@+id/action_step1_to_step2"
+            app:destination="@id/createStep2Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createStep2Fragment"
+        android:name="com.example.perfecttrip.ui.create.CreateStep2Fragment"
+        android:label="Step2">
+        <action
+            android:id="@+id/action_step2_to_step3"
+            app:destination="@id/createStep3Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createStep3Fragment"
+        android:name="com.example.perfecttrip.ui.create.CreateStep3Fragment"
+        android:label="Step3">
+        <action
+            android:id="@+id/action_step3_to_checklist"
+            app:destination="@id/checklistFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checklistFragment"
+        android:name="com.example.perfecttrip.ui.checklist.ChecklistFragment"
+        android:label="Checklist">
+        <argument
+            android:name="tripId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+</navigation>
