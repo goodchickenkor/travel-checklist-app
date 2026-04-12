@@ -32,7 +32,7 @@ class CreateStep1Fragment : Fragment(R.layout.fragment_create_step1) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentCreateStep1Binding.bind(view)
 
-        restoreDraft()   // 🔥 추가
+        restoreDraft()
 
         binding.nameEdit.doAfterTextChanged {
             updateNextButtonState()

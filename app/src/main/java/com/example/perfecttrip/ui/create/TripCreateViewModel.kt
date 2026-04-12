@@ -9,7 +9,7 @@ data class TripDraft(
     val title: String = "",
     val startDate: Long? = null,
     val endDate: Long? = null,
-    val categories: Set<Category> = emptySet()   // 🔥 핵심
+    val categories: Set<Category> = emptySet()
 )
 
 class TripCreateViewModel : ViewModel() {

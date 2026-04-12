@@ -18,7 +18,7 @@ class CreateStep2Fragment : Fragment(R.layout.fragment_create_step2) {
     private var _binding: FragmentCreateStep2Binding? = null
     private val binding get() = _binding!!
 
-    // 🔥 String → Category로 변경
+
     private val selectedCategories = mutableSetOf<Category>()
 
     private val viewModel: TripCreateViewModel by activityViewModels()

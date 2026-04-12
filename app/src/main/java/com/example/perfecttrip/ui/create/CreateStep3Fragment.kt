@@ -19,7 +19,7 @@ class CreateStep3Fragment : Fragment(R.layout.fragment_create_step3) {
 
     private val viewModel: TripCreateViewModel by activityViewModels()
 
-    // 🔥 String → Category로 변경
+
     private val selectedCategories = mutableSetOf<Category>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,12 +52,12 @@ class CreateStep3Fragment : Fragment(R.layout.fragment_create_step3) {
         setupToggleImage(binding.valleyBtn, Category.VALLEY,
             R.drawable.selected_valley, R.drawable.unselected_valley)
 
-        // 🔙 뒤로가기
+
         binding.backBtn.setOnClickListener {
             findNavController().popBackStack()
         }
 
-        // ✅ 완료 → 기존 Category 유지 + 현재 선택 합치기
+
         binding.finishBtn.setOnClickListener {
             val current = viewModel.getDraft().categories
             val merged = current + selectedCategories   // 🔥 Step2 + Step3 합치기

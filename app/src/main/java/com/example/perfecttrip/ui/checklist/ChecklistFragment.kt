@@ -53,7 +53,7 @@ class ChecklistFragment : Fragment(R.layout.fragment_checklist) {
                             tripId = tripId,
                             name = item.name,
                             isChecked = item.isChecked,
-                            category = item.category.name   // 🔥 추가
+                            category = item.category.name
                         )
                     )
                 }
@@ -76,7 +76,7 @@ class ChecklistFragment : Fragment(R.layout.fragment_checklist) {
         setupCompleteButton(tripId)
     }
 
-    // 🔥 기존 여행 로드
+
     private fun loadExistingTrip(tripId: Int) {
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -85,10 +85,10 @@ class ChecklistFragment : Fragment(R.layout.fragment_checklist) {
 
                     val groupedList = mutableListOf<ChecklistItem>()
 
-                    // 🔥 category 기준 그룹핑
+
                     val grouped = items.groupBy { it.category }
 
-                    // 기본 준비물 먼저
+
                     grouped[Category.BASE.name]?.let { baseItems ->
                         groupedList.add(ChecklistItem.Header(Category.BASE.displayName()))
 
@@ -128,7 +128,7 @@ class ChecklistFragment : Fragment(R.layout.fragment_checklist) {
         }
     }
 
-    // 🔥 새 체크리스트 생성
+
     private fun loadNewChecklist() {
         val draft = viewModel.getDraft()
 
@@ -138,7 +138,7 @@ class ChecklistFragment : Fragment(R.layout.fragment_checklist) {
         adapter.submitList(list)
     }
 
-    // 🔥 완료 버튼
+
     private fun setupCompleteButton(tripId: Int) {
 
         binding.completeBtn.setOnClickListener {
@@ -150,7 +150,7 @@ class ChecklistFragment : Fragment(R.layout.fragment_checklist) {
 
             val draft = viewModel.getDraft()
 
-            // 🔥 Header 제외하고 Item만 추출
+
             val items = adapter.getItems()
                 .filterIsInstance<ChecklistItem.Item>()
 

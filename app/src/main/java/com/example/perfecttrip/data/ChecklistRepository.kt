@@ -7,7 +7,7 @@ import com.example.perfecttrip.ui.checklist.ChecklistItem
 
 object ChecklistRepository {
 
-    // 🔥 기본 준비물 (항상 포함)
+
     private val baseItems = listOf(
         "상비약", "구급상자",
         "칫솔", "치약",
@@ -18,7 +18,6 @@ object ChecklistRepository {
         "향수", "왁스 헤어 에센스", "헤어 스프레이", "고데기", "브러쉬", "머리끈"
     )
 
-    // 🔥 카테고리별 준비물
     private val templates = mapOf(
 
         // ===== 동행자 =====
@@ -102,12 +101,12 @@ object ChecklistRepository {
         )
     )
 
-    // 🔥 핵심 함수
+
     fun getGroupedItems(categories: List<Category>): List<ChecklistItem> {
 
         val result = mutableListOf<ChecklistItem>()
 
-        // 1️⃣ 기본 준비물
+
         result.add(ChecklistItem.Header("기본 준비물"))
         baseItems.forEach {
             result.add(
@@ -118,7 +117,7 @@ object ChecklistRepository {
             )
         }
 
-        // 2️⃣ 선택 카테고리별
+
         categories.forEach { category ->
 
             val items = templates[category] ?: return@forEach

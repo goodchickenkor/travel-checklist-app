@@ -23,6 +23,5 @@ data class ChecklistItemEntity(
     val name: String,
     val isChecked: Boolean = false,
 
-    // 🔥 추가 (핵심)
     val category: String
 )

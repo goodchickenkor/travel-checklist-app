@@ -55,7 +55,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         b.tripRecycler.layoutManager = LinearLayoutManager(requireContext())
         b.tripRecycler.adapter = adapter
 
-        // 🔥 DB 데이터 observe
+
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.tripList.collect { tripEntities ->
