@@ -133,11 +133,10 @@ com.example.perfecttrip
 
 ---
 
-## 📸 실행 화면 (추가 예정)
+## 📸 실행 화면 
 
-* 홈 화면
-* Step1 / Step2 / Step3
-* 체크리스트 화면
+![perfect_trip_움짤](https://github.com/user-attachments/assets/55783bb1-04ea-4bfa-8fe6-a8d10ca2ed42)
+
 
 ---
 
